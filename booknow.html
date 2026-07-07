@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='%23A16207'><path d='M0 64C0 46.3 14.3 32 32 32H352c17.7 0 32 14.3 32 32V224h32c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H416V448c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H96V448c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H32c-17.7 0-32-14.3-32-32V288c0-17.7 14.3-32 32-32H64V64zm320 96V96H128v64H320z'/></svg>">
+    <title>Book Now | RestoreCraft</title>
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B5E3C',
+                        secondary: '#C89F72',
+                        accent: '#E8D3B9',
+                        darkBg: '#2B2118',
+                        lightBg: '#FFFDFB',
+                        textDark: '#4B3A2E'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-lightBg dark:bg-darkBg text-textDark dark:text-lightBg transition-colors duration-300 relative min-h-screen pb-12">
+
+    <!-- NAVBAR (Simplified) -->
+    <!-- NAVBAR -->
+    <!-- NAVBAR (Simplified) -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-lightBg/90 dark:bg-darkBg/90 backdrop-blur-md py-4 border-b border-accent/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <i class="fa-solid fa-chair text-primary text-2xl group-hover:text-secondary transition"></i>
+                    <span class="font-bold text-xl tracking-tight text-primary dark:text-accent">RestoreCraft</span>
+                </a>
+
+                <!-- Right Actions (Toggles Only) -->
+                <div class="flex items-center space-x-4">
+                    <button class="theme-toggle p-2 rounded-full hover:bg-accent/20 transition text-textDark dark:text-lightBg">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:inline"></i>
+                    </button>
+                    <button class="dir-toggle p-2 rounded-full hover:bg-accent/20 transition text-sm font-bold">
+                        LTR
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BOOKING HEADER -->
+    <header class="pt-32 pb-12 text-center fade-up px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Book a Consultation</h1>
+        <p class="opacity-80 max-w-2xl mx-auto">Fill out the details below to schedule an assessment for your furniture restoration project.</p>
+    </header>
+
+    <!-- BOOKING FORM -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 fade-up">
+        <div class="bg-white dark:bg-[#33271E] p-8 md:p-12 rounded-[2rem] shadow-xl border border-accent/20">
+            <form class="space-y-8">
+                
+                <!-- Personal Details -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-primary border-b border-accent/20 pb-2">1. Your Details</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2 opacity-90">Full Name *</label>
+                            <input type="text" class="w-full bg-lightBg dark:bg-darkBg border border-accent/40 dark:border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 opacity-90">Email Address *</label>
+                            <input type="email" class="w-full bg-lightBg dark:bg-darkBg border border-accent/40 dark:border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 opacity-90">Phone Number *</label>
+                            <input type="tel" class="w-full bg-lightBg dark:bg-darkBg border border-accent/40 dark:border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 opacity-90">Pickup Address</label>
+                            <input type="text" class="w-full bg-lightBg dark:bg-darkBg border border-accent/40 dark:border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Street, City, Zip">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Details -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-primary border-b border-accent/20 pb-2">2. Project Details</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2 opacity-90">Furniture Type *</label>
+                            <select class="w-full bg-lightBg dark:bg-darkBg border border-accent/40 dark:border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none">
+                                <option value="">Select type...</option>
+                                <option value="chair">Chair / Seating</option>
+                                <option value="table">Table / Desk</option>
+                                <option value="cabinet">Cabinet / Storage</option>
+                                <option value="antique">Antique Piece</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 opacity-90">Repair Type *</label>
+                            <select class="w-full bg-lightBg dark:bg-darkBg border border-accent/40 dark:border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none">
+                                <option value="">Select service...</option>
+                                <option value="refinish">Wood Refinishing / Polishing</option>
+                                <option value="structural">Structural Repair</option>
+                                <option value="upholstery">Upholstery</option>
+                                <option value="full">Full Restoration</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium mb-2 opacity-90">Special Instructions / Description</label>
+                        <textarea rows="4" class="w-full bg-lightBg dark:bg-darkBg border border-accent/40 dark:border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Describe the damage or what you want to achieve..."></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2 opacity-90">Upload Furniture Image (Optional)</label>
+                        <div class="border-2 border-dashed border-accent/40 dark:border-white/20 rounded-xl p-8 text-center hover:bg-accent/5 transition cursor-pointer">
+                            <i class="fa-solid fa-cloud-arrow-up text-3xl text-primary mb-2"></i>
+                            <p class="text-sm opacity-70">Drag and drop or click to upload images</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scheduling -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-primary border-b border-accent/20 pb-2">3. Preferred Schedule</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2 opacity-90">Preferred Date *</label>
+                            <input type="date" class="w-full bg-lightBg dark:bg-darkBg border border-accent/40 dark:border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 opacity-90">Preferred Time *</label>
+                            <input type="time" class="w-full bg-lightBg dark:bg-darkBg border border-accent/40 dark:border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="pt-6">
+                    <button type="submit" class="w-full bg-primary hover:bg-secondary text-white py-4 rounded-xl btn-ripple transition shadow-xl text-xl font-bold">
+                        Book Appointment
+                    </button>
+                    <p class="text-center text-xs opacity-60 mt-4">By booking, you agree to our terms and conditions.</p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Custom JS -->
+    
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

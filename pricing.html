@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='%23A16207'><path d='M0 64C0 46.3 14.3 32 32 32H352c17.7 0 32 14.3 32 32V224h32c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H416V448c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H96V448c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H32c-17.7 0-32-14.3-32-32V288c0-17.7 14.3-32 32-32H64V64zm320 96V96H128v64H320z'/></svg>">
+    <title>Pricing | RestoreCraft</title>
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B5E3C',
+                        secondary: '#C89F72',
+                        accent: '#E8D3B9',
+                        darkBg: '#2B2118',
+                        lightBg: '#FFFDFB',
+                        textDark: '#4B3A2E'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-lightBg dark:bg-darkBg text-textDark dark:text-lightBg transition-colors duration-300 relative">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-lightBg/90 dark:bg-darkBg/90 backdrop-blur-md py-4 border-b border-accent/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <i class="fa-solid fa-chair text-primary text-2xl group-hover:text-secondary transition"></i>
+                    <span class="font-bold text-xl tracking-tight text-primary dark:text-accent">RestoreCraft</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="index.html" class="nav-link hover:text-primary transition">Home</a>
+                    <a href="home2.html" class="nav-link hover:text-primary transition">Home 2</a>
+                    <a href="aboutus.html" class="nav-link hover:text-primary transition">About</a>
+                    <a href="services.html" class="nav-link hover:text-primary transition">Services</a>
+                    <a href="gallery.html" class="nav-link hover:text-primary transition">Gallery</a>
+                    <a href="pricing.html" class="nav-link hover:text-primary transition">Pricing</a>
+                    <a href="contact.html" class="nav-link hover:text-primary transition">Contact</a>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <button class="theme-toggle p-2 rounded-full hover:bg-accent/20 transition text-textDark dark:text-lightBg">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:inline"></i>
+                    </button>
+                    <button class="dir-toggle p-2 rounded-full hover:bg-accent/20 transition text-sm font-bold">
+                        LTR
+                    </button>
+                    <a href="login.html" class="bg-secondary text-white px-5 py-2 rounded-full hover:bg-primary transition shadow-md font-medium">Login</a>
+                    <a href="booknow.html" class="bg-primary hover:bg-secondary text-white px-5 py-2 rounded-full btn-ripple transition shadow-lg shadow-primary/30">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center gap-4">
+                    <button id="mobile-menu-btn" class="text-2xl focus:outline-none">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-lightBg dark:bg-darkBg absolute w-full left-0 top-full border-t border-accent/20 shadow-xl">
+            <div class="flex flex-col px-4 py-6 space-y-4">
+                <a href="index.html" class="nav-link-mobile hover:text-primary">Home</a>
+                <a href="home2.html" class="nav-link-mobile hover:text-primary">Home 2</a>
+                <a href="aboutus.html" class="nav-link-mobile hover:text-primary">About</a>
+                <a href="services.html" class="nav-link-mobile hover:text-primary">Services</a>
+                <a href="gallery.html" class="nav-link-mobile hover:text-primary">Gallery</a>
+                <a href="pricing.html" class="nav-link-mobile hover:text-primary">Pricing</a>
+                <a href="contact.html" class="nav-link-mobile hover:text-primary">Contact</a>
+                <hr class="border-accent/20">
+                <div class="flex items-center justify-between">
+                    <button class="theme-toggle flex items-center gap-2 text-textDark dark:text-lightBg hover:text-primary">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:inline"></i>
+                        <span class="dark:hidden">Dark Mode</span>
+                        <span class="hidden dark:inline">Light Mode</span>
+                    </button>
+                    <button class="dir-toggle text-sm font-bold border px-3 py-1 rounded-full hover:bg-accent/20 transition">
+                        LTR Toggle
+                    </button>
+                </div>
+                <hr class="border-accent/20">
+                <a href="login.html" class="bg-secondary text-white px-5 py-2 rounded-full text-center hover:bg-primary transition shadow-md font-medium">Login</a>
+                <a href="booknow.html" class="bg-primary text-white px-5 py-2 rounded-full text-center">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main class="pt-24">
+        <!-- 1. HERO SECTION -->
+<section class="relative min-h-[60vh] flex items-center overflow-hidden fade-up bg-white dark:bg-[#33271E]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Left Column: Content -->
+            <div>
+                <span class="text-secondary font-semibold uppercase tracking-wider text-sm mb-4 block">Affordable Quality</span>
+                <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+                    Transparent <span class="text-primary">Pricing</span>
+                </h1>
+                <p class="text-lg opacity-80 mb-8 max-w-lg leading-relaxed">No hidden fees or surprise charges. Just honest, upfront estimates based on the exact materials and craftsmanship your project requires.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="contact.html" class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-full btn-ripple transition shadow-lg shadow-primary/30 font-semibold text-lg flex items-center gap-2 w-fit">
+                        Request Custom Quote
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right Column: Content-Sized Image Container (No Cropping) -->
+            <div class="w-full flex justify-center lg:justify-end">
+                <!-- 
+                  Removed aspect-video / lg:aspect-[4/3]. 
+                  The container now scales dynamically to fit the chair's native image dimensions.
+                -->
+                <div class="rounded-3xl shadow-2xl hover-lift border-8 border-lightBg dark:border-darkBg overflow-hidden bg-[#fafafa] max-w-[550px] w-full">
+                    <img src="assets/pricing hero" class="w-full h-auto block" alt="Pricing Hero Genuine Antique Chair">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <!-- 2. PRICING PACKAGES -->
+<section class="py-24 fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">Standard <span class="text-primary">Packages</span></h2>
+            <p class="opacity-80 max-w-2xl mx-auto">While most restoration jobs are custom-quoted based on damage, we offer standard starting rates for common repairs.</p>
+        </div>
+        
+        <!-- 
+          Responsive Grid Configuration:
+          - Mobile (default): 1 column
+          - Tablet (md: 768px): 2 columns with elegant spacing
+          - Desktop (lg: 1024px): 3 columns in a clean single row
+        -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+            
+            <!-- Basic Repair -->
+            <div class="bg-white dark:bg-[#33271E] p-8 rounded-3xl shadow-lg border border-accent/20 hover-lift flex flex-col w-full">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold mb-2">Basic Repair</h3>
+                    <p class="opacity-70 text-sm">Perfect for minor fixes and touch-ups.</p>
+                </div>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold">Starts $99</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-grow">
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-primary mt-1"></i> Scratch & dent removal</li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-primary mt-1"></i> Re-gluing loose joints</li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-primary mt-1"></i> Minor hardware replacement</li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-primary mt-1"></i> Surface cleaning</li>
+                </ul>
+                <a href="booknow.html" class="block w-full text-center border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-full font-bold transition mt-auto">Select Package</a>
+            </div>
+
+            <!-- Full Restoration (Featured Card) -->
+            <!-- Modified: Removed 'transform md:-translate-y-4' on tablet to maintain an orderly layout line, re-applied it at lg (1024px) -->
+            <div class="bg-primary text-white p-8 rounded-3xl shadow-xl hover-lift flex flex-col relative border border-primary w-full lg:transform lg:-translate-y-4">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent text-darkBg px-4 py-1 rounded-full text-sm font-bold shadow-md whitespace-nowrap">
+                    Most Popular
+                </div>
+                <div class="mb-8 mt-2">
+                    <h3 class="text-2xl font-bold mb-2">Full Restoration</h3>
+                    <p class="opacity-90 text-sm text-accent">Complete overhaul for beloved items.</p>
+                </div>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold">Starts $299</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-grow text-accent/90">
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-accent mt-1"></i> Complete paint/stain stripping</li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-accent mt-1"></i> Major structural rebuilding</li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-accent mt-1"></i> Custom color stain matching</li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-accent mt-1"></i> 3-layer protective lacquer</li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-accent mt-1"></i> Free Pickup & Delivery</li>
+                </ul>
+                <a href="booknow.html" class="block w-full text-center bg-accent text-darkBg hover:bg-white py-3 rounded-full font-bold transition shadow-lg mt-auto">Select Package</a>
+            </div>
+
+            <!-- Premium Upholstery -->
+            <!-- 
+              Arrangement Fix:
+              At md (768px), it spans 2 columns and centers itself horizontally. 
+              At lg (1024px), it breaks back cleanly into a standard 1-column slot alongside the others.
+            -->
+            <div class="bg-white dark:bg-[#33271E] p-8 rounded-3xl shadow-lg border border-accent/20 hover-lift flex flex-col w-full md:col-span-2 md:max-w-md md:mx-auto lg:col-span-1 lg:max-w-none lg:mx-0">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold mb-2">Upholstery</h3>
+                    <p class="opacity-70 text-sm">Breathe new life into sofas and chairs.</p>
+                </div>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold">Starts $199</span>
+                    <span class="text-sm opacity-60 block mt-1">+ Cost of Fabric</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-grow">
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-primary mt-1"></i> Fabric stripping & removal</li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-primary mt-1"></i> High-density foam replacement</li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-primary mt-1"></i> Spring tensioning & webbing</li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-primary mt-1"></i> Professional precision stitching</li>
+                </ul>
+                <a href="booknow.html" class="block w-full text-center border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-full font-bold transition mt-auto">Select Package</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <!-- 3. ADD-ON SERVICES -->
+        <section class="py-24 bg-accent/5 dark:bg-black/20 fade-up">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold mb-16">À La Carte <span class="text-primary">Services</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white dark:bg-[#33271E] p-6 rounded-2xl shadow border border-accent/20">
+                        <h4 class="font-bold text-lg mb-2">Wood Polishing</h4>
+                        <p class="text-primary font-bold text-xl mb-4">$45 / item</p>
+                        <p class="text-sm opacity-80">Deep cleaning and wax polishing to restore natural.</p>
+                    </div>
+                    <div class="bg-white dark:bg-[#33271E] p-6 rounded-2xl shadow border border-accent/20">
+                        <h4 class="font-bold text-lg mb-2">Conditioning</h4>
+                        <p class="text-primary font-bold text-xl mb-4">$60 / sofa</p>
+                        <p class="text-sm opacity-80">Premium leather treatment to prevent cracking shine.</p>
+                    </div>
+                    <div class="bg-white dark:bg-[#33271E] p-6 rounded-2xl shadow border border-accent/20">
+                        <h4 class="font-bold text-lg mb-2">Replacement</h4>
+                        <p class="text-primary font-bold text-xl mb-4">$25 / set</p>
+                        <p class="text-sm opacity-80">Installing new modern or vintage handles and knobs.</p>
+                    </div>
+                    <div class="bg-white dark:bg-[#33271E] p-6 rounded-2xl shadow border border-accent/20">
+                        <h4 class="font-bold text-lg mb-2">Pet Damage Repair</h4>
+                        <p class="text-primary font-bold text-xl mb-4">From $80</p>
+                        <p class="text-sm opacity-80">Fixing chewed wooden legs and scratched upholstery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     <!-- 4. QUOTATION PROCESS -->
+<section class="py-24 fade-up overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">How Our <span class="text-primary">Pricing Works</span></h2>
+        </div>
+        
+        <!-- 
+          Responsive Step Structure:
+          - Mobile: 1 column vertical list
+          - Tablet (md: 768px): Clean 2x2 grid matrix
+          - Desktop (lg: 1024px): Horizontal 4-column flow layout
+        -->
+        <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8 max-w-lg md:max-w-3xl lg:max-w-none mx-auto text-center">
+            
+            <!-- Horizontal Connector Line (Strictly for Desktop) -->
+            <div class="absolute top-8 left-0 w-full h-1 bg-accent/30 -z-10 hidden lg:block"></div>
+            
+            <!-- Step 1 -->
+            <div class="flex flex-col items-center bg-lightBg dark:bg-darkBg lg:bg-transparent px-4 group">
+                <div class="w-16 h-16 bg-white dark:bg-[#33271E] border-4 border-primary text-primary rounded-full flex items-center justify-center text-xl mb-4 shadow-lg transition duration-300 group-hover:scale-110">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+                <h4 class="font-bold mb-2 text-lg">1. Send Photos</h4>
+                <p class="text-sm opacity-80 max-w-[220px]">Send us images of the damage via email.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex flex-col items-center bg-lightBg dark:bg-darkBg lg:bg-transparent px-4 group">
+                <div class="w-16 h-16 bg-white dark:bg-[#33271E] border-4 border-primary text-primary rounded-full flex items-center justify-center text-xl mb-4 shadow-lg transition duration-300 group-hover:scale-110">
+                    <i class="fa-solid fa-calculator"></i>
+                </div>
+                <h4 class="font-bold mb-2 text-lg">2. Receive Estimate</h4>
+                <p class="text-sm opacity-80 max-w-[220px]">We'll reply within 24 hours with a transparent cost.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex flex-col items-center bg-lightBg dark:bg-darkBg lg:bg-transparent px-4 group">
+                <div class="w-16 h-16 bg-white dark:bg-[#33271E] border-4 border-primary text-primary rounded-full flex items-center justify-center text-xl mb-4 shadow-lg transition duration-300 group-hover:scale-110">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <h4 class="font-bold mb-2 text-lg">3. Free Inspection</h4>
+                <p class="text-sm opacity-80 max-w-[220px]">We inspect the piece in person to finalize the price.</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="flex flex-col items-center bg-lightBg dark:bg-darkBg lg:bg-transparent px-4 group">
+                <div class="w-16 h-16 bg-primary text-white border-4 border-primary rounded-full flex items-center justify-center text-xl mb-4 shadow-lg transition duration-300 group-hover:scale-110">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h4 class="font-bold mb-2 text-lg">4. Final Agreement</h4>
+                <p class="text-sm opacity-80 max-w-[220px]">No hidden fees. The price we agree on is the price you pay.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <!-- 5. FAQ SECTION -->
+        <section class="py-24 bg-white dark:bg-[#33271E] fade-up border-y border-accent/20">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Pricing <span class="text-primary">FAQ</span></h2>
+                    <p class="opacity-80">Common questions about our billing and estimates.</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="border border-accent/30 rounded-2xl p-6 shadow-sm">
+                        <h4 class="font-bold text-lg mb-2 flex items-center gap-3"><i class="fa-solid fa-circle-question text-primary"></i> Do you charge for estimates?</h4>
+                        <p class="opacity-80 text-sm leading-relaxed">No, all our online and in-home estimates are 100% free with no obligation.</p>
+                    </div>
+                    <div class="border border-accent/30 rounded-2xl p-6 shadow-sm">
+                        <h4 class="font-bold text-lg mb-2 flex items-center gap-3"><i class="fa-solid fa-circle-question text-primary"></i> Do I have to pay upfront?</h4>
+                        <p class="opacity-80 text-sm leading-relaxed">We require a 30% deposit to begin work and purchase materials. The remaining 70% is due upon delivery and your full satisfaction.</p>
+                    </div>
+                    <div class="border border-accent/30 rounded-2xl p-6 shadow-sm">
+                        <h4 class="font-bold text-lg mb-2 flex items-center gap-3"><i class="fa-solid fa-circle-question text-primary"></i> Is pickup and delivery included?</h4>
+                        <p class="opacity-80 text-sm leading-relaxed">Yes, for all Full Restoration and Upholstery packages within a 50-mile radius, pickup and delivery are completely free.</p>
+                    </div>
+                    <div class="border border-accent/30 rounded-2xl p-6 shadow-sm">
+                        <h4 class="font-bold text-lg mb-2 flex items-center gap-3"><i class="fa-solid fa-circle-question text-primary"></i> Do you offer commercial discounts?</h4>
+                        <p class="opacity-80 text-sm leading-relaxed">Yes, we offer bulk discount pricing for hotels, restaurants, and corporate offices doing 10+ items. Contact us directly for a commercial quote.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CALL TO ACTION -->
+        <section class="py-24 fade-up bg-primary text-white text-center">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">Get Your Free <span class="text-accent">Estimate Today</span></h2>
+                <p class="text-xl opacity-90 mb-10">Send us a photo of your furniture, and we'll give you a clear, honest quote within 24 hours.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="contact.html" class="bg-accent hover:bg-white text-darkBg px-10 py-4 rounded-full btn-ripple transition shadow-xl text-lg font-bold">
+                        Request Estimate
+                    </a>
+                    <a href="booknow.html" class="border-2 border-accent text-accent hover:bg-accent hover:text-darkBg px-10 py-4 rounded-full transition text-lg font-bold">
+                        Book Inspection
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+  <!-- FOOTER -->
+    <footer class="bg-darkBg text-white pt-20 pb-10 border-t-4 border-primary fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-chair text-secondary text-3xl"></i>
+                        <span class="font-bold text-2xl tracking-tight">RestoreCraft</span>
+                    </a>
+                    <p class="opacity-70 mb-6 leading-relaxed">
+                        Bringing Your Furniture Back to Life. Premium repair and restoration services by master craftsmen dedicated to preserving your treasured pieces.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-pinterest-p"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-secondary uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3 opacity-80">
+                        <li><a href="index.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Home</a></li>
+                        <li><a href="home2.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Home 2</a></li>
+                        <li><a href="aboutus.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> About Us</a></li>
+                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Services</a></li>
+                        <li><a href="gallery.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Gallery</a></li>
+                        <li><a href="pricing.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Pricing</a></li>
+                        <li><a href="contact.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Contact</a></li>
+                        <li><a href="booknow.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Book Now</a></li>
+     
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-secondary uppercase tracking-wider">Services</h4>
+                    <ul class="space-y-3 opacity-80">
+                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Furniture Repair</a></li>
+                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Wood Restoration</a></li>
+                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Antique Repair</a></li>
+                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Polishing</a></li>
+                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Chair Repair</a></li>
+                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Table Repair</a></li>
+                                      <li><a href="404.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> 404 Page</a></li>
+                        <li><a href="comingsoon.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Coming Soon</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter & Contact -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-secondary uppercase tracking-wider">Contact & Newsletter</h4>
+                    <ul class="space-y-4 opacity-80 mb-6">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-location-dot mt-1 text-primary"></i> 123 Artisan Way, Craftsville, NY 10001</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-primary"></i> +1 (555) 123-4567</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-envelope text-primary"></i> hello@restorecraft.com</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-clock mt-1 text-primary"></i> Mon - Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 4:00 PM</li>
+                    </ul>
+                    <form class="relative">
+                        <input type="email" placeholder="Email Address" class="w-full bg-white/10 border border-white/20 rounded-full px-6 py-3 text-white placeholder-white/50 focus:outline-none focus:border-primary">
+                        <button type="submit" class="absolute right-2 top-2 bg-primary hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-60">
+                <p>&copy; 2026 RestoreCraft Furniture. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-secondary transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-secondary transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

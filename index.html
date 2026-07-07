@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='%23A16207'><path d='M0 64C0 46.3 14.3 32 32 32H352c17.7 0 32 14.3 32 32V224h32c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H416V448c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H96V448c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H32c-17.7 0-32-14.3-32-32V288c0-17.7 14.3-32 32-32H64V64zm320 96V96H128v64H320z'/></svg>">
+    <title>RestoreCraft Furniture | Expert Repair & Restoration</title>
+    <meta name="description" content="Bringing Your Furniture Back to Life with expert repair and restoration services by RestoreCraft Furniture. Premium, elegant, and craftsmanship-focused.">
+    
+    <!-- Open Graph / SEO -->
+    <meta property="og:title" content="RestoreCraft Furniture">
+    <meta property="og:description" content="Bringing Your Furniture Back to Life.">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B5E3C',
+                        secondary: '#C89F72',
+                        accent: '#E8D3B9',
+                        darkBg: '#2B2118',
+                        lightBg: '#FFFDFB',
+                        textDark: '#4B3A2E'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-lightBg dark:bg-darkBg text-textDark dark:text-lightBg transition-colors duration-300 relative">
+
+    <!-- NAVBAR -->
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-lightBg/90 dark:bg-darkBg/90 backdrop-blur-md py-4 border-b border-accent/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <i class="fa-solid fa-chair text-primary text-2xl group-hover:text-secondary transition"></i>
+                    <span class="font-bold text-xl tracking-tight text-primary dark:text-accent">RestoreCraft</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="index.html" class="nav-link hover:text-primary transition">Home</a>
+                    <a href="home2.html" class="nav-link hover:text-primary transition">Home 2</a>
+                    <a href="aboutus.html" class="nav-link hover:text-primary transition">About</a>
+                    <a href="services.html" class="nav-link hover:text-primary transition">Services</a>
+                    <a href="gallery.html" class="nav-link hover:text-primary transition">Gallery</a>
+                    <a href="pricing.html" class="nav-link hover:text-primary transition">Pricing</a>
+                    <a href="contact.html" class="nav-link hover:text-primary transition">Contact</a>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <button class="theme-toggle p-2 rounded-full hover:bg-accent/20 transition text-textDark dark:text-lightBg">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:inline"></i>
+                    </button>
+                    <button class="dir-toggle p-2 rounded-full hover:bg-accent/20 transition text-sm font-bold">
+                        LTR
+                    </button>
+                    <a href="login.html" class="bg-secondary text-white px-5 py-2 rounded-full hover:bg-primary transition shadow-md font-medium">Login</a>
+                    <a href="booknow.html" class="bg-primary hover:bg-secondary text-white px-5 py-2 rounded-full btn-ripple transition shadow-lg shadow-primary/30">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center gap-4">
+                    <button id="mobile-menu-btn" class="text-2xl focus:outline-none">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-lightBg dark:bg-darkBg absolute w-full left-0 top-full border-t border-accent/20 shadow-xl">
+            <div class="flex flex-col px-4 py-6 space-y-4">
+                <a href="index.html" class="nav-link-mobile hover:text-primary">Home</a>
+                <a href="home2.html" class="nav-link-mobile hover:text-primary">Home 2</a>
+                <a href="aboutus.html" class="nav-link-mobile hover:text-primary">About</a>
+                <a href="services.html" class="nav-link-mobile hover:text-primary">Services</a>
+                <a href="gallery.html" class="nav-link-mobile hover:text-primary">Gallery</a>
+                <a href="pricing.html" class="nav-link-mobile hover:text-primary">Pricing</a>
+                <a href="contact.html" class="nav-link-mobile hover:text-primary">Contact</a>
+                <hr class="border-accent/20">
+                <div class="flex items-center justify-between">
+                    <button class="theme-toggle flex items-center gap-2 text-textDark dark:text-lightBg hover:text-primary">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:inline"></i>
+                        <span class="dark:hidden">Dark Mode</span>
+                        <span class="hidden dark:inline">Light Mode</span>
+                    </button>
+                    <button class="dir-toggle text-sm font-bold border px-3 py-1 rounded-full hover:bg-accent/20 transition">
+                        LTR Toggle
+                    </button>
+                </div>
+                <hr class="border-accent/20">
+                <a href="login.html" class="bg-secondary text-white px-5 py-2 rounded-full text-center hover:bg-primary transition shadow-md font-medium">Login</a>
+                <a href="booknow.html" class="bg-primary text-white px-5 py-2 rounded-full text-center">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24">
+        <!-- 1. HERO SECTION -->
+        <section class="relative min-h-[90vh] flex items-center overflow-hidden fade-up">
+            <div class="absolute inset-0 bg-accent/10 dark:bg-darkBg z-0"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-secondary font-semibold uppercase tracking-wider text-sm mb-4 block">Master Craftsmanship</span>
+                        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+                            Furniture <span class="text-primary">Restoration</span> Experts
+                        </h1>
+                        <p class="text-lg md:text-xl opacity-80 mb-8 max-w-lg leading-relaxed">
+                            Bringing your cherished furniture back to life with premium repair, refinishing, and antique restoration services.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="booknow.html" class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-full btn-ripple transition shadow-lg shadow-primary/30 text-lg font-medium">
+                                Book Now
+                            </a>
+                            <a href="services.html" class="border-2 border-primary text-primary dark:border-secondary dark:text-secondary hover:bg-primary hover:text-white dark:hover:bg-secondary dark:hover:text-darkBg px-8 py-3 rounded-full transition text-lg font-medium">
+                                Explore Services
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative w-full">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-full filter blur-3xl transform scale-110"></div>
+                        <img src="assets/indexhero" alt="Furniture Restoration" class="relative z-10 rounded-3xl shadow-2xl hover-lift object-cover h-[350px] md:h-[500px] lg:h-[600px] w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. TRUSTED CLIENTS -->
+        <section class="py-12 bg-white dark:bg-darkBg/50 border-y border-accent/20 fade-up">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-sm font-medium opacity-60 mb-8 uppercase tracking-widest">Trusted by premium brands & families</p>
+                <div class="flex flex-wrap justify-center gap-12 items-center opacity-70">
+                    <i class="fa-brands fa-etsy text-4xl hover:text-primary transition"></i>
+                    <i class="fa-brands fa-houzz text-4xl hover:text-primary transition"></i>
+                    <i class="fa-brands fa-pinterest text-4xl hover:text-primary transition"></i>
+                    <i class="fa-brands fa-intercom text-4xl hover:text-primary transition"></i>
+                    <i class="fa-brands fa-pagelines text-4xl hover:text-primary transition"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. WHY CHOOSE US -->
+        <section class="py-24 fade-up">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-4">Why Choose <span class="text-primary">RestoreCraft</span></h2>
+                        <p class="opacity-80">We combine traditional woodworking techniques with modern materials to deliver unparalleled restoration quality.</p>
+                    </div>
+                    <img src="assets/master craftmen" class="rounded-3xl shadow-xl hover-lift object-cover h-64 w-full">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="bg-white dark:bg-[#33271E] p-8 rounded-3xl shadow-sm hover-lift border border-accent/20">
+                        <div class="w-16 h-16 bg-accent/30 dark:bg-primary/20 rounded-2xl flex items-center justify-center mb-6 text-primary">
+                            <i class="fa-solid fa-hammer text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Master Craftsmen</h3>
+                        <p class="opacity-70 leading-relaxed">Our artisans have decades of combined experience in handling delicate antiques and modern pieces with precision.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="bg-white dark:bg-[#33271E] p-8 rounded-3xl shadow-sm hover-lift border border-accent/20">
+                        <div class="w-16 h-16 bg-accent/30 dark:bg-primary/20 rounded-2xl flex items-center justify-center mb-6 text-primary">
+                            <i class="fa-solid fa-leaf text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Eco-Friendly Materials</h3>
+                        <p class="opacity-70 leading-relaxed">We use sustainable, low-VOC finishes and ethically sourced woods for all our repairs and restorations.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="bg-white dark:bg-[#33271E] p-8 rounded-3xl shadow-sm hover-lift border border-accent/20">
+                        <div class="w-16 h-16 bg-accent/30 dark:bg-primary/20 rounded-2xl flex items-center justify-center mb-6 text-primary">
+                            <i class="fa-solid fa-truck-fast text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Pickup & Delivery</h3>
+                        <p class="opacity-70 leading-relaxed">Enjoy hassle-free service with our careful, fully insured white-glove pickup and delivery for your furniture.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SERVICES OVERVIEW -->
+        <section class="py-24 bg-accent/5 dark:bg-black/20 fade-up">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-4">Our Premium <span class="text-primary">Services</span></h2>
+                        <p class="opacity-80 max-w-lg">Comprehensive care for your treasured pieces.</p>
+                    </div>
+                    <a href="services.html" class="font-medium text-primary hover:text-secondary transition flex items-center gap-2">
+                        View All Services <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Service 1 -->
+                    <div class="group relative rounded-3xl overflow-hidden hover-lift h-80">
+                        <img src="assets/Antique Restoration" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Antique Restoration">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-darkBg/40 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-lightBg">
+                            <h3 class="text-xl font-bold mb-2">Antique Restoration</h3>
+                            <p class="text-sm opacity-80 mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">Preserving history through meticulous care.</p>
+                        </div>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="group relative rounded-3xl overflow-hidden hover-lift h-80">
+                        <img src="assets/Wood Refinishing" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Wood Refinishing">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-darkBg/40 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-lightBg">
+                            <h3 class="text-xl font-bold mb-2">Wood Refinishing</h3>
+                            <p class="text-sm opacity-80 mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">Bringing back the original luster and shine.</p>
+                        </div>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="group relative rounded-3xl overflow-hidden hover-lift h-80">
+                        <img src="assets/Upholstery & Frame" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Upholstery Repair">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-darkBg/40 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-lightBg">
+                            <h3 class="text-xl font-bold mb-2">Upholstery & Frame</h3>
+                            <p class="text-sm opacity-80 mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">Structural fixes and fabric renewal.</p>
+                        </div>
+                    </div>
+                    <!-- Service 4 -->
+                    <div class="group relative rounded-3xl overflow-hidden hover-lift h-80">
+                        <img src="assets/Custom Modifications" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Custom Joinery">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-darkBg/40 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-lightBg">
+                            <h3 class="text-xl font-bold mb-2">Custom Modifications</h3>
+                            <p class="text-sm opacity-80 mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">Tailoring pieces to your exact needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. BEFORE & AFTER -->
+      <section class="py-24 fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <!-- Left Side: Text Content -->
+            <div>
+                <h2 class="text-4xl font-bold mb-6">Incredible <span class="text-primary">Transformations</span></h2>
+                <p class="opacity-80 leading-relaxed mb-8">See the magic of our restoration process. We take battered, broken, and faded furniture and restore it to its former glory, often making it look better than new.</p>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> Structural stabilization</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> Scratch and dent removal</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> Color matching and staining</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> Protective finishing coats</li>
+                </ul>
+                <a href="gallery.html" class="btn-ripple bg-darkBg dark:bg-lightBg text-lightBg dark:text-darkBg px-8 py-3 rounded-full font-medium inline-block shadow-lg">View Gallery</a>
+            </div>
+
+            <!-- Right Side: Big Content-Sized Image -->
+            <!-- Removed width restrictions so it expands to fill the entire 2nd grid column -->
+            <div class="w-full relative rounded-3xl overflow-hidden hover-lift shadow-xl bg-neutral-100">
+                <div class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-sm">BEFORE</div>
+                
+                <!-- h-auto and object-contain keeps the natural proportions/content-size of the image -->
+                <img src="assets/before1" class="w-full h-auto block object-contain filter grayscale sepia brightness-75" alt="Before Restoration">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <!-- 6. RESTORATION PROCESS TIMELINE -->
+        <section class="py-24 bg-darkBg text-lightBg fade-up">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Our Proven <span class="text-secondary">Process</span></h2>
+                    <p class="opacity-80 max-w-2xl mx-auto">From consultation to delivery, we ensure a seamless experience.</p>
+                </div>
+                
+                <div class="relative max-w-4xl mx-auto space-y-12">
+                    <!-- Line -->
+                    <div class="absolute left-[23px] md:left-1/2 top-0 bottom-0 w-0.5 bg-secondary/30 md:-translate-x-1/2"></div>
+                    
+                    <!-- Step 1 -->
+                    <div class="relative md:w-1/2 md:pr-12 md:text-right pl-16 md:pl-0">
+                        <div class="absolute w-6 h-6 bg-secondary rounded-full left-[12px] md:left-auto md:-right-[12px] top-1 border-4 border-darkBg shadow z-10"></div>
+                        <h3 class="text-2xl font-bold text-secondary mb-2">1. Consultation & Quote</h3>
+                        <p class="opacity-80 text-sm">We assess the damage, discuss your goals, and provide a transparent, detailed estimate for the restoration.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative md:w-1/2 md:pl-12 pl-16 md:ml-auto">
+                        <div class="absolute w-6 h-6 bg-secondary rounded-full left-[12px] md:-left-[12px] top-1 border-4 border-darkBg shadow z-10"></div>
+                        <h3 class="text-2xl font-bold text-secondary mb-2">2. Pickup & Prep</h3>
+                        <p class="opacity-80 text-sm">Our team safely transports your piece to our workshop where it is carefully cleaned and prepped for work.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative md:w-1/2 md:pr-12 md:text-right pl-16 md:pl-0">
+                        <div class="absolute w-6 h-6 bg-secondary rounded-full left-[12px] md:left-auto md:-right-[12px] top-1 border-4 border-darkBg shadow z-10"></div>
+                        <h3 class="text-2xl font-bold text-secondary mb-2">3. Master Craftsmanship</h3>
+                        <p class="opacity-80 text-sm">Our artisans execute repairs, joint stabilization, sanding, and refinishing using premium materials.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="relative md:w-1/2 md:pl-12 pl-16 md:ml-auto">
+                        <div class="absolute w-6 h-6 bg-secondary rounded-full left-[12px] md:-left-[12px] top-1 border-4 border-darkBg shadow z-10"></div>
+                        <h3 class="text-2xl font-bold text-secondary mb-2">4. Quality Check & Delivery</h3>
+                        <p class="opacity-80 text-sm">After strict quality control, we return your beautiful, restored furniture directly to your home.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CUSTOMER TESTIMONIALS -->
+        <section class="py-24 fade-up">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Client <span class="text-primary">Love</span></h2>
+                    <p class="opacity-80">Don't just take our word for it.</p>
+                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Review 1 -->
+    <div class="bg-white dark:bg-[#33271E] p-8 rounded-3xl shadow-sm hover-lift border border-accent/20 relative">
+        <i class="fa-solid fa-quote-left text-4xl text-accent/50 absolute top-6 right-8"></i>
+        <div class="flex text-yellow-500 text-sm mb-4">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="opacity-80 mb-6 italic">"They brought my grandmother's 100-year-old dining table back to life. The finish is stunning, and the wobbly legs are completely fixed. Highly recommended!"</p>
+        <div class="flex items-center gap-4">
+            <img src="assets/t1" class="w-12 h-12 rounded-full object-cover shadow-sm" alt="Sarah Jenkins">
+            <div>
+                <h4 class="font-bold">Sarah Jenkins</h4>
+                <p class="text-xs opacity-60">Homeowner</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review 2 -->
+    <div class="bg-primary text-white p-8 rounded-3xl shadow-lg hover-lift transform md:-translate-y-4 relative">
+        <i class="fa-solid fa-quote-left text-4xl text-white/20 absolute top-6 right-8"></i>
+        <div class="flex text-yellow-300 text-sm mb-4">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="mb-6 italic">"Professional, timely, and incredibly skilled. They restored our office's vintage leather chairs perfectly. We will definitely use RestoreCraft again."</p>
+        <div class="flex items-center gap-4">
+            <img src="assets/t2" class="w-12 h-12 rounded-full object-cover shadow-sm border border-white/20" alt="Michael Davis">
+            <div>
+                <h4 class="font-bold">Michael Davis</h4>
+                <p class="text-xs opacity-80">Corporate Client</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review 3: Centered strictly at md (768px), goes back to standard width on lg (1024px+) -->
+    <div class="bg-white dark:bg-[#33271E] p-8 rounded-3xl shadow-sm hover-lift border border-accent/20 relative md:col-span-2 md:mx-auto md:max-w-xl lg:col-span-1 lg:mx-0 lg:max-w-none">
+        <i class="fa-solid fa-quote-left text-4xl text-accent/50 absolute top-6 right-8"></i>
+        <div class="flex text-yellow-500 text-sm mb-4">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="opacity-80 mb-6 italic">"The level of craftsmanship is unmatched. They managed to match the exact stain of my modern coffee table after it suffered severe water damage."</p>
+        <div class="flex items-center gap-4">
+            <img src="assets/t3" class="w-12 h-12 rounded-full object-cover shadow-sm" alt="Emily Roberts">
+            <div>
+                <h4 class="font-bold">Emily Roberts</h4>
+                <p class="text-xs opacity-60">Interior Designer</p>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </section>
+
+<!-- PRICING PACKAGES -->
+        <section class="py-24 fade-up">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Standard <span class="text-primary">Packages</span></h2>
+                    <p class="opacity-80 max-w-2xl mx-auto">While most restoration jobs are custom-quoted based on damage, we offer standard starting rates for common repairs.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Basic Repair -->
+                    <div class="bg-white dark:bg-[#33271E] p-8 rounded-3xl shadow-lg border border-accent/20 hover-lift flex flex-col">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold mb-2">Basic Repair</h3>
+                            <p class="opacity-70 text-sm">Perfect for minor fixes and touch-ups.</p>
+                        </div>
+                        <div class="mb-8">
+                            <span class="text-4xl font-bold">Starts $99</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-grow">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-primary mt-1"></i> Scratch & dent removal</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-primary mt-1"></i> Re-gluing loose joints</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-primary mt-1"></i> Minor hardware replacement</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-primary mt-1"></i> Surface cleaning</li>
+                        </ul>
+                        <a href="booknow.html" class="block w-full text-center border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-full font-bold transition">Select Package</a>
+                    </div>
+
+                    <!-- Full Restoration -->
+                    <div class="bg-primary text-white p-8 rounded-3xl shadow-xl hover-lift flex flex-col relative transform md:-translate-y-4 border border-primary">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent text-darkBg px-4 py-1 rounded-full text-sm font-bold shadow-md">
+                            Most Popular
+                        </div>
+                        <div class="mb-8 mt-2">
+                            <h3 class="text-2xl font-bold mb-2">Full Restoration</h3>
+                            <p class="opacity-90 text-sm text-accent">Complete overhaul for beloved items.</p>
+                        </div>
+                        <div class="mb-8">
+                            <span class="text-4xl font-bold">Starts $299</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-grow text-accent/90">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-accent mt-1"></i> Complete paint/stain stripping</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-accent mt-1"></i> Major structural rebuilding</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-accent mt-1"></i> Custom color stain matching</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-accent mt-1"></i> 3-layer protective lacquer</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-accent mt-1"></i> Free Pickup & Delivery</li>
+                        </ul>
+                        <a href="booknow.html" class="block w-full text-center bg-accent text-darkBg hover:bg-white py-3 rounded-full font-bold transition shadow-lg">Select Package</a>
+                    </div>
+
+                    <!-- Premium Upholstery -->
+                    <div class="bg-white dark:bg-[#33271E] p-8 rounded-3xl shadow-lg border border-accent/20 hover-lift flex flex-col">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold mb-2">Upholstery</h3>
+                            <p class="opacity-70 text-sm">Breathe new life into sofas and chairs.</p>
+                        </div>
+                        <div class="mb-8">
+                            <span class="text-4xl font-bold">Starts $199</span>
+                            <span class="text-sm opacity-60 block">+ Cost of Fabric</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-grow">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-primary mt-1"></i> Fabric stripping & removal</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-primary mt-1"></i> High-density foam replacement</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-primary mt-1"></i> Spring tensioning & webbing</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-primary mt-1"></i> Professional precision stitching</li>
+                        </ul>
+                        <a href="booknow.html" class="block w-full text-center border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-full font-bold transition">Select Package</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. FEATURED PROJECTS -->
+        <section class="py-24 bg-accent/5 dark:bg-black/20 fade-up">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-4">Featured <span class="text-primary">Projects</span></h2>
+                        <p class="opacity-80 max-w-lg">A glimpse into our recent masterpieces.</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="group relative rounded-3xl overflow-hidden hover-lift h-[400px]">
+                        <img src="assets/Eames Chair Restoration" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Project 1">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-darkBg/20 to-transparent opacity-80 group-hover:opacity-100 transition duration-300"></div>
+                        <div class="absolute bottom-8 left-8 text-white">
+                            <span class="bg-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3 inline-block">Mid-Century</span>
+                            <h3 class="text-2xl font-bold mb-2">Eames Chair Restoration</h3>
+                            <p class="opacity-80 max-w-sm">Complete veneer repair and leather reconditioning.</p>
+                        </div>
+                    </div>
+                    <div class="group relative rounded-3xl overflow-hidden hover-lift h-[400px]">
+                        <img src="assets/Oak Cabinet Refinishing" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Project 2">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-darkBg/20 to-transparent opacity-80 group-hover:opacity-100 transition duration-300"></div>
+                        <div class="absolute bottom-8 left-8 text-white">
+                            <span class="bg-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3 inline-block">Victorian Antique</span>
+                            <h3 class="text-2xl font-bold mb-2">Oak Cabinet Refinishing</h3>
+                            <p class="opacity-80 max-w-sm">Stripped years of paint to reveal the stunning original grain.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. FAQ -->
+        <section class="py-24 fade-up">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Frequent <span class="text-primary">Questions</span></h2>
+                    <p class="opacity-80">Everything you need to know about our services.</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <!-- FAQ Item -->
+                    <details class="bg-white dark:bg-[#33271E] rounded-2xl shadow-sm border border-accent/20 group cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold p-6 text-lg list-none">
+                            Do you offer pickup and delivery?
+                            <span class="transition group-open:rotate-180">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+                        </summary>
+                        <div class="p-6 pt-0 opacity-70 leading-relaxed border-t border-accent/20 mt-2">
+                            Yes, we offer fully insured white-glove pickup and delivery services within a 50-mile radius of our workshop. Fees are calculated based on distance and the size of the furniture.
+                        </div>
+                    </details>
+                    <!-- FAQ Item -->
+                    <details class="bg-white dark:bg-[#33271E] rounded-2xl shadow-sm border border-accent/20 group cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold p-6 text-lg list-none">
+                            How long does a typical restoration take?
+                            <span class="transition group-open:rotate-180">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+                        </summary>
+                        <div class="p-6 pt-0 opacity-70 leading-relaxed border-t border-accent/20 mt-2">
+                            A standard refinishing job usually takes 2-3 weeks. Complex antique restorations or upholstery work can take 4-6 weeks depending on material availability and the extent of the repairs.
+                        </div>
+                    </details>
+                    <!-- FAQ Item -->
+                    <details class="bg-white dark:bg-[#33271E] rounded-2xl shadow-sm border border-accent/20 group cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold p-6 text-lg list-none">
+                            Can you match the original stain color?
+                            <span class="transition group-open:rotate-180">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+                        </summary>
+                        <div class="p-6 pt-0 opacity-70 leading-relaxed border-t border-accent/20 mt-2">
+                            Absolutely. Our master finishers are experts in color matching. We can blend custom stains to perfectly match the original finish or coordinate with other pieces in your home.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. CTA BANNER -->
+        <section class="py-20 fade-up">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-primary rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+                    <div class="absolute inset-0 bg-[url('assets/homecta')] opacity-10 bg-cover bg-center"></div>
+                    <div class="relative z-10 text-white">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Revive Your Furniture?</h2>
+                        <p class="text-lg opacity-90 mb-10 max-w-2xl mx-auto">Get a free estimate today and let our master craftsmen restore the beauty and functionality of your cherished pieces.</p>
+                        <a href="booknow.html" class="bg-white text-primary hover:bg-accent px-10 py-4 rounded-full btn-ripple transition shadow-xl text-lg font-bold inline-block">
+                            Book Consultation Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkBg text-white pt-20 pb-10 border-t-4 border-primary fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-chair text-secondary text-3xl"></i>
+                        <span class="font-bold text-2xl tracking-tight">RestoreCraft</span>
+                    </a>
+                    <p class="opacity-70 mb-6 leading-relaxed">
+                        Bringing Your Furniture Back to Life. Premium repair and restoration services by master craftsmen dedicated to preserving your treasured pieces.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-pinterest-p"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-secondary uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3 opacity-80">
+                        <li><a href="index.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Home</a></li>
+                        <li><a href="home2.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Home 2</a></li>
+                        <li><a href="aboutus.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> About Us</a></li>
+                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Services</a></li>
+                        <li><a href="gallery.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Gallery</a></li>
+                        <li><a href="pricing.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Pricing</a></li>
+                        <li><a href="contact.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Contact</a></li>
+                        <li><a href="booknow.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Book Now</a></li>
+     
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-secondary uppercase tracking-wider">Services</h4>
+                    <ul class="space-y-3 opacity-80">
+                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Furniture Repair</a></li>
+                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Wood Restoration</a></li>
+                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Antique Repair</a></li>
+                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Polishing</a></li>
+                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Chair Repair</a></li>
+                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Table Repair</a></li>
+                                      <li><a href="404.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> 404 Page</a></li>
+                        <li><a href="comingsoon.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Coming Soon</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter & Contact -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-secondary uppercase tracking-wider">Contact & Newsletter</h4>
+                    <ul class="space-y-4 opacity-80 mb-6">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-location-dot mt-1 text-primary"></i> 123 Artisan Way, Craftsville, NY 10001</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-primary"></i> +1 (555) 123-4567</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-envelope text-primary"></i> hello@restorecraft.com</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-clock mt-1 text-primary"></i> Mon - Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 4:00 PM</li>
+                    </ul>
+                    <form class="relative">
+                        <input type="email" placeholder="Email Address" class="w-full bg-white/10 border border-white/20 rounded-full px-6 py-3 text-white placeholder-white/50 focus:outline-none focus:border-primary">
+                        <button type="submit" class="absolute right-2 top-2 bg-primary hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-60">
+                <p>&copy; 2026 RestoreCraft Furniture. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-secondary transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-secondary transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top-btn" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full shadow-xl flex items-center justify-center hover:bg-secondary transition-all duration-300 hidden z-50">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

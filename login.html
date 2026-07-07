@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='%23A16207'><path d='M0 64C0 46.3 14.3 32 32 32H352c17.7 0 32 14.3 32 32V224h32c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H416V448c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H96V448c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H32c-17.7 0-32-14.3-32-32V288c0-17.7 14.3-32 32-32H64V64zm320 96V96H128v64H320z'/></svg>">
+    <title>Login | RestoreCraft</title>
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B5E3C',
+                        secondary: '#C89F72',
+                        accent: '#E8D3B9',
+                        darkBg: '#2B2118',
+                        lightBg: '#FFFDFB',
+                        textDark: '#4B3A2E'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-lightBg dark:bg-darkBg text-textDark dark:text-lightBg transition-colors duration-300 relative min-h-screen flex flex-col">
+
+    <!-- NAVBAR (Consistent) -->
+    <!-- NAVBAR -->
+    <!-- NAVBAR (Simplified) -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-lightBg/90 dark:bg-darkBg/90 backdrop-blur-md py-4 border-b border-accent/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <i class="fa-solid fa-chair text-primary text-2xl group-hover:text-secondary transition"></i>
+                    <span class="font-bold text-xl tracking-tight text-primary dark:text-accent">RestoreCraft</span>
+                </a>
+
+                <!-- Right Actions (Toggles Only) -->
+                <div class="flex items-center space-x-4">
+                    <button class="theme-toggle p-2 rounded-full hover:bg-accent/20 transition text-textDark dark:text-lightBg">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:inline"></i>
+                    </button>
+                    <button class="dir-toggle p-2 rounded-full hover:bg-accent/20 transition text-sm font-bold">
+                        LTR
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SIMPLE LOGIN -->
+    <main class="flex-grow flex items-center justify-center pt-24 pb-12 px-4 fade-up">
+        <div class="bg-white dark:bg-[#33271E] p-8 md:p-10 rounded-3xl shadow-xl border border-accent/20 w-full max-w-md">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold mb-2">Welcome Back</h1>
+                <p class="opacity-80">Log in to your account.</p>
+            </div>
+            
+            <form class="space-y-5">
+                <div>
+                    <label for="email" class="block text-sm font-medium mb-1 opacity-90">Email Address</label>
+                    <input type="email" id="email" class="w-full bg-lightBg dark:bg-darkBg border border-accent/40 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition" placeholder="Enter your email">
+                </div>
+                
+                <div>
+                    <label for="password" class="block text-sm font-medium mb-1 opacity-90">Password</label>
+                    <div class="relative">
+                        <input type="password" id="password" class="w-full bg-lightBg dark:bg-darkBg border border-accent/40 rounded-xl px-4 py-3 pr-10 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition" placeholder="Enter your password">
+                        <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 hover:text-primary transition" onclick="document.getElementById('password').type = document.getElementById('password').type === 'password' ? 'text' : 'password'">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember-me" type="checkbox" class="h-4 w-4 rounded border-accent/40 text-primary focus:ring-primary bg-lightBg dark:bg-darkBg cursor-pointer">
+                        <label for="remember-me" class="ml-2 block text-sm opacity-80 cursor-pointer">
+                            Remember me
+                        </label>
+                    </div>
+                    <a href="#" class="text-sm font-medium text-primary hover:text-secondary transition">
+                        Forgot password?
+                    </a>
+                </div>
+                
+                <button type="submit" class="w-full bg-primary hover:bg-secondary text-white py-3 rounded-xl btn-ripple transition shadow-lg font-medium mt-6">
+                    Log In
+                </button>
+                
+                <div class="relative py-4">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-accent/30"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white dark:bg-[#33271E] opacity-70">Or continue with</span>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center gap-4">
+                    <button type="button" class="flex-1 border border-accent/40 hover:bg-accent/10 py-2.5 rounded-xl transition flex items-center justify-center gap-2 font-medium">
+                        <i class="fa-brands fa-google text-red-500"></i> <span class="hidden sm:inline">Google</span>
+                    </button>
+                    <button type="button" class="flex-1 border border-accent/40 hover:bg-accent/10 py-2.5 rounded-xl transition flex items-center justify-center gap-2 font-medium">
+                        <i class="fa-brands fa-facebook text-blue-600"></i> <span class="hidden sm:inline">Facebook</span>
+                    </button>
+                    <button type="button" class="flex-1 border border-accent/40 hover:bg-accent/10 py-2.5 rounded-xl transition flex items-center justify-center gap-2 font-medium">
+                        <i class="fa-brands fa-apple dark:text-white"></i> <span class="hidden sm:inline">Apple</span>
+                    </button>
+                </div>
+            </form>
+            
+            <p class="mt-8 text-center text-sm opacity-80">
+                Don't have an account? <a href="signup.html" class="font-medium text-primary hover:text-secondary transition">Sign up</a>
+            </p>
+        </div>
+    </main>
+
+    
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
