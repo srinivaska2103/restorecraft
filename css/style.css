@@ -1,0 +1,131 @@
+/* 
+  RestoreCraft Furniture Global CSS
+  Colors:
+  Primary: #8B5E3C
+  Secondary: #C89F72
+  Accent: #E8D3B9
+  Background: #FFFDFB
+  Dark: #2B2118
+  Text: #4B3A2E
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: #FFFDFB;
+    color: #4B3A2E;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Variables */
+html.dark body {
+    background-color: #2B2118;
+    color: #FFFDFB;
+}
+
+html.dark .dark-card {
+    background-color: #3B2D21;
+    border-color: #4B3A2E;
+}
+
+html.dark .text-dark {
+    color: #E8D3B9;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #FFFDFB; 
+}
+::-webkit-scrollbar-thumb {
+    background: #C89F72; 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #8B5E3C; 
+}
+html.dark ::-webkit-scrollbar-track {
+    background: #2B2118; 
+}
+
+/* Base Styles */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
+/* Hover Animations */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+html.dark .hover-lift:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Button Ripple Effect */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+.btn-ripple::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease-out, height 0.6s ease-out;
+    opacity: 0;
+}
+.btn-ripple:active::after {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+    transition: 0s;
+}
+
+/* Glassmorphism */
+.glass {
+    background: rgba(255, 253, 251, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(232, 211, 185, 0.3);
+}
+html.dark .glass {
+    background: rgba(43, 33, 24, 0.8);
+    border-bottom: 1px solid rgba(75, 58, 46, 0.3);
+}
+
+/* Fade-in Sections */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sticky Navbar */
+#navbar {
+    transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+#navbar.scrolled {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
