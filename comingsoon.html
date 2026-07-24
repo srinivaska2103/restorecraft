@@ -13,15 +13,16 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#8B5E3C',
-                        secondary: '#C89F72',
-                        accent: '#E8D3B9',
-                        darkBg: '#2B2118',
-                        lightBg: '#FFFDFB',
-                        textDark: '#4B3A2E'
+                        primary: '#C5A059',
+                        secondary: '#1A1A1A',
+                        accent: '#F9F6F0',
+                        darkBg: '#121212',
+                        lightBg: '#FAFAFA',
+                        textDark: '#222222'
                     },
                     fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     }
                 }
             }
@@ -42,7 +43,16 @@
             <div class="flex justify-between items-center">
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center gap-2 group">
-                    <i class="fa-solid fa-chair text-primary text-2xl group-hover:text-secondary transition"></i>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-primary group-hover:text-secondary transition-all duration-300 transform group-hover:-translate-y-1">
+                        <!-- Modern Armchair Base -->
+                        <path d="M4 14V8C4 5.79086 5.79086 4 8 4H16C18.2091 4 20 5.79086 20 8V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Thick Rounded Cushion -->
+                        <path d="M2 14C2 12.8954 2.89543 12 4 12H20C21.1046 12 22 12.8954 22 14V16C22 17.1046 21.1046 18 20 18H4C2.89543 18 2 17.1046 2 16V14Z" fill="currentColor"/>
+                        <!-- Elegant Curved Legs -->
+                        <path d="M5 18V20C5 20.5523 4.55228 21 4 21M19 18V20C19 20.5523 19.4477 21 20 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Decorative Back Stitching -->
+                        <path d="M9 4V12M15 4V12" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" stroke-linecap="round"/>
+                    </svg>
                     <span class="font-bold text-xl tracking-tight text-primary dark:text-accent">RestoreCraft</span>
                 </a>
 

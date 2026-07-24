@@ -14,15 +14,16 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#8B5E3C',
-                        secondary: '#C89F72',
-                        accent: '#E8D3B9',
-                        darkBg: '#2B2118',
-                        lightBg: '#FFFDFB',
-                        textDark: '#4B3A2E'
+                        primary: '#C5A059',
+                        secondary: '#1A1A1A',
+                        accent: '#F9F6F0',
+                        darkBg: '#121212',
+                        lightBg: '#FAFAFA',
+                        textDark: '#222222'
                     },
                     fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     }
                 }
             }
@@ -42,18 +43,27 @@
             <div class="flex justify-between items-center">
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center gap-2 group">
-                    <i class="fa-solid fa-chair text-primary text-2xl group-hover:text-secondary transition"></i>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-primary group-hover:text-secondary transition-all duration-300 transform group-hover:-translate-y-1">
+                        <!-- Modern Armchair Base -->
+                        <path d="M4 14V8C4 5.79086 5.79086 4 8 4H16C18.2091 4 20 5.79086 20 8V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Thick Rounded Cushion -->
+                        <path d="M2 14C2 12.8954 2.89543 12 4 12H20C21.1046 12 22 12.8954 22 14V16C22 17.1046 21.1046 18 20 18H4C2.89543 18 2 17.1046 2 16V14Z" fill="currentColor"/>
+                        <!-- Elegant Curved Legs -->
+                        <path d="M5 18V20C5 20.5523 4.55228 21 4 21M19 18V20C19 20.5523 19.4477 21 20 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Decorative Back Stitching -->
+                        <path d="M9 4V12M15 4V12" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" stroke-linecap="round"/>
+                    </svg>
                     <span class="font-bold text-xl tracking-tight text-primary dark:text-accent">RestoreCraft</span>
                 </a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center gap-6">
                     <a href="index.html" class="nav-link hover:text-primary transition">Home</a>
-                    <a href="home2.html" class="nav-link hover:text-primary transition">Home 2</a>
+                    <a href="home2.html" class="nav-link hover:text-primary transition">Home2</a>
                     <a href="aboutus.html" class="nav-link hover:text-primary transition">About</a>
-                    <a href="services.html" class="nav-link hover:text-primary transition">Services</a>
-                    <a href="gallery.html" class="nav-link hover:text-primary transition">Gallery</a>
-                    <a href="pricing.html" class="nav-link hover:text-primary transition">Pricing</a>
+                    <a href="services.html" class="nav-link hover:text-primary transition">Restoration</a>
+                    <a href="gallery.html" class="nav-link hover:text-primary transition">Portfolio</a>
+                    <a href="pricing.html" class="nav-link hover:text-primary transition">Rates</a>
                     <a href="contact.html" class="nav-link hover:text-primary transition">Contact</a>
                 </div>
 
@@ -68,7 +78,7 @@
                     </button>
                     <a href="login.html" class="border-2 border-secondary text-secondary hover:bg-secondary hover:text-white px-5 py-2 rounded-full transition shadow-md font-medium">Login</a>
                     <a href="booknow.html" class="bg-primary hover:bg-secondary text-white px-5 py-2 rounded-full btn-ripple transition shadow-lg shadow-primary/30">
-                        Book Now
+                        Request Consultation
                     </a>
                 </div>
 
@@ -85,11 +95,11 @@
         <div id="mobile-menu" class="hidden lg:hidden bg-lightBg dark:bg-darkBg absolute w-full left-0 top-full border-t border-accent/20 shadow-xl">
             <div class="flex flex-col px-4 py-6 space-y-4">
                 <a href="index.html" class="nav-link-mobile hover:text-primary">Home</a>
-                <a href="home2.html" class="nav-link-mobile hover:text-primary">Home 2</a>
+                <a href="home2.html" class="nav-link-mobile hover:text-primary">Home2</a>
                 <a href="aboutus.html" class="nav-link-mobile hover:text-primary">About</a>
-                <a href="services.html" class="nav-link-mobile hover:text-primary">Services</a>
-                <a href="gallery.html" class="nav-link-mobile hover:text-primary">Gallery</a>
-                <a href="pricing.html" class="nav-link-mobile hover:text-primary">Pricing</a>
+                <a href="services.html" class="nav-link-mobile hover:text-primary">Restoration</a>
+                <a href="gallery.html" class="nav-link-mobile hover:text-primary">Portfolio</a>
+                <a href="pricing.html" class="nav-link-mobile hover:text-primary">Rates</a>
                 <a href="contact.html" class="nav-link-mobile hover:text-primary">Contact</a>
                 <hr class="border-accent/20">
                 <div class="flex items-center justify-between">
@@ -105,15 +115,15 @@
                 </div>
                 <hr class="border-accent/20">
                 <a href="login.html" class="border-2 border-secondary text-secondary hover:bg-secondary hover:text-white px-5 py-2 rounded-full text-center transition shadow-md font-medium">Login</a>
-                <a href="booknow.html" class="bg-primary text-white px-5 py-2 rounded-full text-center">Book Now</a>
+                <a href="booknow.html" class="bg-primary text-white px-5 py-2 rounded-full text-center">Request Consultation</a>
             </div>
         </div>
     </nav>
 
     
-    <main class="pt-24">
+    <main>
         <!-- 1. HERO SECTION -->
-      <section class="relative min-h-[60vh] flex items-center overflow-hidden fade-up">
+      <section class="relative min-h-[60vh] flex items-center overflow-hidden fade-up pt-28 pb-12">
     <div class="absolute inset-0 bg-accent/10 dark:bg-darkBg z-0"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -144,7 +154,7 @@
     </div>
 </section>
  <!-- 9. ACHIEVEMENTS & CUSTOMER TRUST -->
-        <section class="py-24 bg-primary text-white fade-up text-center relative overflow-hidden">
+        <section class="py-32 bg-primary text-white fade-up text-center relative overflow-hidden">
             <div class="absolute inset-0 bg-black/20"></div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <h2 class="text-4xl font-bold mb-16">Achievements & <span class="text-accent">Customer Trust</span></h2>
@@ -177,7 +187,7 @@
             </div>
         </section>
         <!-- 2. OUR STORY -->
-    <section class="py-24 bg-white dark:bg-[#33271E] fade-up">
+    <section class="py-32 bg-white dark:bg-[#33271E] fade-up">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             
@@ -206,7 +216,7 @@
 </section>
 
         <!-- 3. MISSION -->
-        <section class="py-24 bg-accent/5 dark:bg-black/20 fade-up text-center">
+        <section class="py-32 bg-accent/5 dark:bg-black/20 fade-up text-center">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-left">
                     <div>
@@ -220,7 +230,7 @@
         </section>
 
         <!-- 4. VISION -->
-        <section class="py-24 bg-white dark:bg-[#33271E] fade-up text-center">
+        <section class="py-32 bg-white dark:bg-[#33271E] fade-up text-center">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-left">
                     <img src="assets/abtimg3" class="rounded-3xl hover-lift shadow-xl object-cover h-80 w-full order-2 md:order-1">
@@ -234,7 +244,7 @@
         </section>
 
         <!-- 5. OUR CORE VALUES -->
-        <section class="py-24 fade-up border-y border-accent/20">
+        <section class="py-32 fade-up border-y border-accent/20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <span class="text-secondary font-semibold uppercase tracking-wider text-sm mb-2 block">What We Stand For</span>
                 <h2 class="text-4xl font-bold mb-16">Our Core <span class="text-primary">Values</span></h2>
@@ -277,7 +287,7 @@
         </section>
 
         <!-- 6. MEET OUR TEAM -->
-     <section class="py-24 bg-white dark:bg-[#33271E] fade-up">
+     <section class="py-32 bg-white dark:bg-[#33271E] fade-up">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-4xl font-bold mb-16">Meet Our <span class="text-primary">Team</span></h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -323,7 +333,7 @@
 </section>
 
         <!-- 7. OUR WORKSHOP & EQUIPMENT -->
-      <section class="py-24 fade-up">
+      <section class="py-32 fade-up">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
@@ -362,13 +372,13 @@
        
 
         <!-- 10. CALL TO ACTION -->
-        <section class="py-24 fade-up bg-accent/10 dark:bg-black/40 text-center">
+        <section class="py-32 fade-up bg-accent/10 dark:bg-black/40 text-center">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl md:text-5xl font-bold mb-8">Ready to Restore <span class="text-primary">Your Furniture?</span></h2>
                 <p class="text-xl opacity-80 mb-10">Let us apply our years of craftsmanship to bring your beloved pieces back to life.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="booknow.html" class="bg-primary hover:bg-secondary text-white px-10 py-4 rounded-full btn-ripple transition shadow-xl text-lg font-bold">
-                        Book Now
+                        Request Consultation
                     </a>
                     <a href="contact.html" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-10 py-4 rounded-full transition text-lg font-bold">
                         Get a Free Quote
@@ -386,7 +396,12 @@
                 <!-- Brand -->
                 <div>
                     <a href="index.html" class="flex items-center gap-2 mb-6">
-                        <i class="fa-solid fa-chair text-secondary text-3xl"></i>
+                                                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-primary hover:text-white transition-all duration-300">
+                              <path d="M4 14V8C4 5.79086 5.79086 4 8 4H16C18.2091 4 20 5.79086 20 8V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M2 14C2 12.8954 2.89543 12 4 12H20C21.1046 12 22 12.8954 22 14V16C22 17.1046 21.1046 18 20 18H4C2.89543 18 2 17.1046 2 16V14Z" fill="currentColor"/>
+                              <path d="M5 18V20C5 20.5523 4.55228 21 4 21M19 18V20C19 20.5523 19.4477 21 20 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M9 4V12M15 4V12" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" stroke-linecap="round"/>
+                          </svg>
                         <span class="font-bold text-2xl tracking-tight">RestoreCraft</span>
                     </a>
                     <p class="opacity-70 mb-6 leading-relaxed">
@@ -403,38 +418,38 @@
 
                 <!-- Quick Links -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-secondary uppercase tracking-wider">Quick Links</h4>
+                    <h4 class="text-lg font-bold mb-6 text-primary uppercase tracking-wider">Quick Links</h4>
                     <ul class="space-y-3 opacity-80">
-                        <li><a href="index.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Home</a></li>
-                        <li><a href="home2.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Home 2</a></li>
-                        <li><a href="aboutus.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> About Us</a></li>
-                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Services</a></li>
-                        <li><a href="gallery.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Gallery</a></li>
-                        <li><a href="pricing.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Pricing</a></li>
-                        <li><a href="contact.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Contact</a></li>
-                        <li><a href="booknow.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Book Now</a></li>
+                        <li><a href="index.html" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Home</a></li>
+                        <li><a href="home2.html" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Home2</a></li>
+                        <li><a href="aboutus.html" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> About</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Restoration</a></li>
+                        <li><a href="gallery.html" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Portfolio</a></li>
+                        <li><a href="pricing.html" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Rates</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Contact</a></li>
+                        <li><a href="booknow.html" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Request Consultation</a></li>
      
                     </ul>
                 </div>
 
                 <!-- Services -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-secondary uppercase tracking-wider">Services</h4>
+                    <h4 class="text-lg font-bold mb-6 text-primary uppercase tracking-wider">Restoration</h4>
                     <ul class="space-y-3 opacity-80">
-                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Furniture Repair</a></li>
-                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Wood Restoration</a></li>
-                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Antique Repair</a></li>
-                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Polishing</a></li>
-                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Chair Repair</a></li>
-                        <li><a href="services.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Table Repair</a></li>
-                                      <li><a href="404.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> 404 Page</a></li>
-                        <li><a href="comingsoon.html" class="hover:text-secondary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Coming Soon</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Furniture Repair</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Wood Restoration</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Antique Repair</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Polishing</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Chair Repair</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Table Repair</a></li>
+                                      <li><a href="404.html" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> 404 Page</a></li>
+                        <li><a href="comingsoon.html" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Coming Soon</a></li>
                     </ul>
                 </div>
 
                 <!-- Newsletter & Contact -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-secondary uppercase tracking-wider">Contact & Newsletter</h4>
+                    <h4 class="text-lg font-bold mb-6 text-primary uppercase tracking-wider">Contact & Newsletter</h4>
                     <ul class="space-y-4 opacity-80 mb-6">
                         <li class="flex items-start gap-3"><i class="fa-solid fa-location-dot mt-1 text-primary"></i> 123 Artisan Way, Craftsville, NY 10001</li>
                         <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-primary"></i> +1 (555) 123-4567</li>
